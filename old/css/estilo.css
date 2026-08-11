@@ -1,0 +1,545 @@
+@charset "iso-8859-1";
+/* CSS Document */
+
+body {
+	margin-top:0px;
+	margin-bottom:0px;
+	background-image:url(../imagens/bg_geral.jpg);
+	background-repeat: repeat-x;
+	
+}
+
+a {
+	text-decoration:none;
+	color:#000;
+}
+
+a:hover {
+	text-decoration:none;
+	color:#09C;
+}
+#principal {
+	width:1000px;
+	height:2100;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+
+#logo {
+	margin-top:5px;
+	margin-left:20px;
+	float:left;
+	width:400px;
+	height:86px;
+}
+
+#telefone_topo {
+	float:left;
+	text-align:right;
+	width:180px;
+	margin-top:30px;
+	margin-left:300px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+}
+
+.telefone_topo_destaque {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:20px;
+	font-weight:bold;
+	color:#666;
+}
+
+#links {
+	float:left;
+	width:425px;
+	margin-top:18px;
+	margin-left:55px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-align:right;
+}
+
+.links_topo a {
+	font-size:14px;
+	font-weight:bold;
+	text-decoration:none;
+	color:#000;
+}
+
+.links_topo a:visited {
+	text-decoration:none;
+	color:#000;
+}
+
+.links_topo a:hover {
+	text-decoration:underline;
+	color:#000;
+}
+
+.links_topo a:active {
+	text-decoration:none;
+	color:#000;
+}
+
+.separador {
+	padding-left:10px;
+	padding-right:10px;
+}
+
+#topo {
+	width:927px;
+	height:100px;
+	margin-right:auto;
+	margin-left:auto;
+	margin-bottom:6px;
+	background-image:url(../imagens/bg_topo.jpg);
+	background-repeat:no-repeat;
+}
+
+#banner {
+	width:927px;
+	height:224px;
+	margin-right:auto;
+	margin-left:auto;
+	background-color:#06C;
+}
+
+#corpo {
+	background-image:url(../imagens/bg_corpo.jpg);
+	background-repeat:repeat-x;
+	background-color:#FFF;
+	width:927px;
+	height:1300px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#corpo_contratar {
+	background-image:url(../imagens/bg_corpo.jpg);
+	background-repeat:repeat-x;
+	width:927px;
+	height:1050px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#box1 {
+	float:left;
+	width:860px;
+	height:320px;
+	margin-top:10px;
+	margin-left:10px;
+	background-image:url(../imagens/bg_box.jpg);
+	background-repeat:no-repeat;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-align:justify;
+	padding:20px;
+	padding-top:25px;
+	padding-left:27px;
+
+}
+
+
+#texto {
+	float:left;
+	display:block;
+	width:450px;
+	text-align:justify;
+	background-color:transparent;
+}
+
+#foto_empresa {
+	float:left;
+	display:block;
+	width:300px;
+	margin-left:20px;
+	padding:30px 20px 0px 30px ;
+	
+}
+
+.img_empresa {
+	border:solid 3px #CCC;
+}
+
+#box2 {
+	float:left;
+	width:400px;
+	margin-top:10px;
+	margin-left:10px;
+	background-image:url(../imagens/bg_box.jpg);
+	background-repeat:no-repeat;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-align:center;
+	padding:20px;
+	padding-top:25px;
+	padding-left:27px;
+
+}
+
+#divisao {
+	
+	float:left;
+	width:910px;
+	height:10px;
+	margin-left:10px;
+}
+
+
+#box3 {
+	float:left;
+	width:910px;
+	height:300px;
+	margin-left:10px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	
+}
+
+#formulario {
+	background-image:url(../imagens/bg_contato.jpg);
+	background-repeat:no-repeat;
+	width:526px;
+	height:400px;
+	float:left;
+	margin-top:22px;
+	margin-left:5px;
+	background-color:#FFF;
+	padding-top:10px;
+	text-align:center;
+
+}
+
+
+#localizacao {
+	background-image:url(../imagens/bg_local.jpg);
+	background-repeat:no-repeat;
+	width:330px;
+	height:400px;
+	float:left;
+	margin-top:22px;
+	background-color:#FFF;
+	padding-top:25px;
+	text-align:center;
+	margin-left:5px;
+	font-size:13px;
+}
+
+
+.botao {
+	display:block;
+	text-align:center;
+	width:340px;
+	margin-left:30px;
+	
+}
+
+
+.font_destaque {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:22px;
+	font-weight:bold;
+	color:#333
+}
+
+.font_red {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#C00;
+}
+
+.titulo_hotsite {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:15px;
+}
+
+#titulo_planos {
+	float:left;
+	width:80px;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:15px;
+	font-weight:bold;
+	margin-left:90px;
+	margin-top:70px;
+	
+}
+
+#titulo_atendimento_online {
+	float:left;
+	width:400px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin-left:55px;
+	margin-top:70px;
+	
+}
+
+#titulo_valor {
+	float:left;
+	width:80px;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:15px;
+	font-weight:bold;
+	margin-left:105px;
+	margin-top:70px;
+	
+}
+
+#produtos {
+	width:900px;
+	float:left;
+	margin-left:5px;
+	margin-top:40px;
+	font-family:"Arial Black", Gadget, sans-serif;
+	font-size:16px;
+	color:#585858;
+}
+
+
+.form_campos2 {
+     background-color:#ffffff; 
+     font: 13px Arial;
+	 border-width:1px;
+     border-style:solid;
+     border-color:#CCC;
+	 width:280px;
+	 height:20px;
+	 font-size: 14px;
+	 	 	 
+}
+
+
+h2 {
+	margin-left:10px;
+	color:#20668b;
+}
+
+
+.detalhes {
+	margin-left:80px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+.detalhes a {
+	text-decoration:underline;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000;
+}
+
+.detalhes a:hover {
+	text-decoration:none;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000;
+}
+
+
+.valor {
+	margin-left:110px;
+	font-family:"Arial Black", Gadget, sans-serif;
+	font-size:18px;
+	color:#900;
+}
+
+.mes {
+	font-family:"Arial Black", Gadget, sans-serif;
+	font-size:15px;
+	color:#900;
+}
+
+
+#contato {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	float:left;
+	margin-left:10px;
+	width:880px;
+	padding-top:5px;
+	padding-left:0px;
+	margin-top:25px;
+}
+
+.nao_incluso {
+	color:#C00;
+}
+
+#rodape {
+	clear:both;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	text-align:center;
+	width:927px;
+	height:40px;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:50px;
+	padding-top:15px;
+	background-color:#EEE;
+	
+}
+
+.link_sobre a{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-decoration:underline;
+	color:#000;
+}
+
+.link_sobre a:hover{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-decoration:none;
+	color:#F60;
+}
+
+.ass {
+	display:block;
+	text-align:right;
+	width:900px;
+	
+}
+
+
+/* formata��o de quadros dos produtos */
+
+
+h3{ margin: 10px 10px 0 10px; color:#000; font:18pt Arial, sans-serif; letter-spacing:-1px; font-weight: bold;  }
+			
+.boxgrid{ 
+	width:250px; 
+	height:200px; 
+	margin:22px; 
+	float:left; 
+	background:#E8E8E8; 
+	border:solid 2px #999; 
+	overflow:hidden; 
+	position:relative;
+	cursor:pointer;
+}
+.boxgrid img{
+	position:absolute;
+	top:0;
+	left:0px;
+	border:0;
+}
+.boxgrid .descricao{ 
+	padding:0px 10px; 
+	color:#333; 
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif; 
+	margin-left:2px;
+	display:block;
+	text-align:justify;
+}
+
+.preco {
+	padding:0 10px; 
+	color:#930; 
+	font-weight:bold; 
+	font-size:18px;
+	font-family:Arial, Helvetica, sans-serif; 
+}
+				
+.boxcaption{ 
+	float:left; 
+	position:absolute; 
+	background:#000; 
+	height:100px; 
+	width:100%; 
+	opacity:.8; 
+	/* For IE 5-7 */
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+	/* For IE 8 */
+   -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+.captionfull .boxcaption {
+	top: 260;
+	left: 0;
+}
+.caption .boxcaption {
+	top: 220;
+	left: 0;
+}
+
+
+
+/* fim da formata��o */
+
+
+
+/* formata��o banner */ 
+
+#slider {
+	position:relative;
+    width:927px;
+    height:224px;
+   	background:url(banner/loading.gif) no-repeat 50% 50%;
+}
+
+
+#slider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+#slider a {
+	border:0;
+	display:block;
+}
+
+.nivo-controlNav {
+	position:absolute;
+	left:410px;
+	bottom:-42px;
+}
+.nivo-controlNav a {
+	display:block;
+	width:22px;
+	height:22px;
+	background-image:url(../banner/bullets.png);
+	text-indent:-9999px;
+	border:0;
+	margin-right:3px;
+	float:left;
+}
+.nivo-controlNav a.active {
+	background-position:0 -22px;
+}
+
+.nivo-directionNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	background-image:url(../banner/arrows.png);
+	text-indent:-9999px;
+	border:0;
+	
+	
+}
+a.nivo-nextNav {
+	background-position:-30px 0;
+	right:15px;
+}
+a.nivo-prevNav {
+	left:15px;
+}
+
+.nivo-caption {
+    text-shadow:none;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.nivo-caption a { 
+    color:#efe9d1;
+    text-decoration:underline;
+}
+
+/* fim */ 
