@@ -3,7 +3,7 @@ import { company, navLinks } from "../../data/content";
 
 export function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300">
+    <footer className="border-t border-slate-800 bg-slate-950 text-slate-400">
       <div className="mx-auto grid max-w-container gap-10 px-4 py-14 sm:px-6 lg:grid-cols-3 lg:px-8">
         <div>
           <img

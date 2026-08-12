@@ -6,7 +6,7 @@ import { Reveal } from "../ui/Section";
 
 export function PriceTable() {
   return (
-    <Section id="tabela" className="bg-white py-20 sm:py-28">
+    <Section id="tabela" className="bg-slate-900/60 border-y border-slate-800/80 py-20 sm:py-28">
       <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow={priceTable.title}
@@ -15,14 +15,14 @@ export function PriceTable() {
         />
 
         <Reveal>
-          <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-card">
+          <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/90 shadow-2xl">
             <div className="overflow-x-auto">
               <table className="w-full min-w-[640px] text-left text-sm">
                 <caption className="sr-only">Tabela de preços de entregas</caption>
                 <thead>
-                  <tr className="bg-brand-blue text-white">
+                  <tr className="border-b border-slate-800 bg-slate-800/80 text-brand-sky">
                     {priceTable.columns.map((column) => (
-                      <th key={column} scope="col" className="px-6 py-4 font-semibold">
+                      <th key={column} scope="col" className="px-6 py-4 font-bold uppercase tracking-wider text-xs">
                         {column}
                       </th>
                     ))}
@@ -32,19 +32,19 @@ export function PriceTable() {
                   {priceTable.rows.map((row, i) => (
                     <tr
                       key={row.region}
-                      className={`${i % 2 === 0 ? "bg-white" : "bg-slate-50"} transition-colors hover:bg-brand-blue/5`}
+                      className={`${i % 2 === 0 ? "bg-slate-900/80" : "bg-slate-950/50"} transition-colors hover:bg-slate-800/60`}
                     >
-                      <th scope="row" className="px-6 py-4 font-semibold text-slate-900">
+                      <th scope="row" className="px-6 py-4 font-semibold text-white">
                         {row.region}
                       </th>
-                      <td className="px-6 py-4 font-bold text-brand-darkred">{row.price}</td>
-                      <td className="px-6 py-4 text-slate-600">{row.note}</td>
+                      <td className="px-6 py-4 font-extrabold text-red-400">{row.price}</td>
+                      <td className="px-6 py-4 text-slate-300">{row.note}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p className="flex items-start gap-2 border-t border-slate-200 bg-slate-50 px-6 py-4 text-xs leading-relaxed text-slate-500">
+            <p className="flex items-start gap-2 border-t border-slate-800 bg-slate-950/80 px-6 py-4 text-xs leading-relaxed text-slate-400">
               <Info size={16} className="mt-0.5 shrink-0 text-brand-sky" aria-hidden="true" />
               {priceTable.disclaimer}
             </p>

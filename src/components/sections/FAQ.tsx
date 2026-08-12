@@ -10,7 +10,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <Section id="faq" className="bg-white py-20 sm:py-28">
+    <Section id="faq" className="bg-slate-900/60 border-y border-slate-800/80 py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="FAQ"
@@ -25,7 +25,7 @@ export function FAQ() {
               <Reveal key={faq.question} delay={i * 0.05}>
                 <div
                   className={`overflow-hidden rounded-xl border transition-colors ${
-                    open ? "border-brand-blue/30 bg-brand-blue/5" : "border-slate-200 bg-white"
+                    open ? "border-brand-sky/50 bg-slate-900/90 shadow-lg" : "border-slate-800 bg-slate-950/60 hover:border-slate-700"
                   }`}
                 >
                   <button
@@ -36,11 +36,11 @@ export function FAQ() {
                     id={`faq-trigger-${i}`}
                     className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
                   >
-                    <span className="font-semibold text-slate-900">{faq.question}</span>
+                    <span className="font-semibold text-white">{faq.question}</span>
                     <ChevronDown
                       size={20}
                       aria-hidden="true"
-                      className={`shrink-0 text-brand-blue transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+                      className={`shrink-0 text-brand-sky transition-transform duration-300 ${open ? "rotate-180" : ""}`}
                     />
                   </button>
                   <AnimatePresence initial={false}>
@@ -54,7 +54,7 @@ export function FAQ() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25, ease: "easeOut" }}
                       >
-                        <p className="px-5 pb-5 text-sm leading-relaxed text-slate-600">
+                        <p className="px-5 pb-5 text-sm leading-relaxed text-slate-300">
                           {faq.answer}
                         </p>
                       </motion.div>

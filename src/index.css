@@ -9,11 +9,12 @@
   }
 
   body {
-    @apply bg-white font-sans text-slate-700 antialiased;
+    @apply bg-slate-950 font-sans text-slate-100 antialiased;
+    color-scheme: dark;
   }
 
   ::selection {
-    @apply bg-brand-blue/90 text-white;
+    @apply bg-brand-blue text-white;
   }
 }
 

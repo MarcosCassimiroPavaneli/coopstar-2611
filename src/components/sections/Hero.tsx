@@ -50,10 +50,7 @@ export function Hero() {
             className="h-full w-full object-cover"
             loading={index === 0 ? "eager" : "lazy"}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/45 to-slate-900/20" />
-          <div className="absolute top-6 right-6 z-10 rounded-xl bg-white/10 p-2 backdrop-blur-md border border-white/20">
-            <img src="/images/logo.png" alt="Coopstar Express" className="h-9 w-auto object-contain" />
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-slate-950/40" />
         </motion.div>
       </AnimatePresence>
 
@@ -67,19 +64,19 @@ export function Hero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-2xl"
           >
-            <p className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold uppercase tracking-widest text-white backdrop-blur-sm">
+            <p className="mb-4 inline-block rounded-full border border-brand-sky/30 bg-brand-sky/15 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-sky backdrop-blur-md">
               {slide.eyebrow}
             </p>
             <h1 className="text-4xl font-extrabold leading-tight text-white text-balance sm:text-5xl lg:text-6xl">
               {slide.title}
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-200">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">
               {slide.subtitle}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="#contato"
-                className="inline-flex items-center gap-2 rounded-lg bg-brand-blue px-7 py-3.5 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-brand-navy hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+                className="inline-flex items-center gap-2 rounded-lg bg-brand-blue px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-blue/25 transition-all hover:-translate-y-0.5 hover:bg-brand-sky focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
               >
                 {slide.cta}
               </a>

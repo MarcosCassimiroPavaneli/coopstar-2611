@@ -11,7 +11,7 @@ const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT as string | u
 type Status = "idle" | "sending" | "success" | "error" | "no-key";
 
 const inputClass =
-  "w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-colors focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/30";
+  "w-full rounded-lg border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 transition-colors focus:border-brand-sky focus:outline-none focus:ring-2 focus:ring-brand-sky/30";
 
 export function Contact() {
   const [status, setStatus] = useState<Status>("idle");
@@ -93,7 +93,7 @@ export function Contact() {
   ];
 
   return (
-    <Section id="contato" className="bg-slate-50 py-20 sm:py-28">
+    <Section id="contato" className="bg-slate-950 py-20 sm:py-28">
       <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Contato / Localização"
@@ -103,20 +103,20 @@ export function Contact() {
 
         <div className="grid gap-10 lg:grid-cols-5">
           <Reveal className="lg:col-span-3">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/90 p-6 shadow-xl sm:p-8">
               {status === "success" ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <div className="mb-4 rounded-full bg-emerald-100 p-4 text-emerald-600">
+                  <div className="mb-4 rounded-full bg-emerald-950/80 border border-emerald-800 p-4 text-emerald-400">
                     <CheckCircle2 size={48} aria-hidden="true" />
                   </div>
-                  <h3 className="mb-2 text-2xl font-bold text-slate-900">Mensagem enviada com sucesso!</h3>
-                  <p className="mb-6 max-w-md text-sm text-slate-600">
+                  <h3 className="mb-2 text-2xl font-bold text-white">Mensagem enviada com sucesso!</h3>
+                  <p className="mb-6 max-w-md text-sm text-slate-300">
                     Agradecemos seu contato. Recebemos sua mensagem e nossa equipe retornará em breve.
                   </p>
                   <button
                     type="button"
                     onClick={() => setStatus("idle")}
-                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-blue px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-navy"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-blue px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-sky"
                   >
                     Enviar outra mensagem
                   </button>
@@ -128,13 +128,13 @@ export function Contact() {
 
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
-                      <label htmlFor="nome" className="mb-1.5 block text-sm font-medium text-slate-700">
+                      <label htmlFor="nome" className="mb-1.5 block text-sm font-medium text-slate-200">
                         Nome completo *
                       </label>
                       <input id="nome" name="name" type="text" required placeholder="Seu nome" className={inputClass} />
                     </div>
                     <div>
-                      <label htmlFor="telefone" className="mb-1.5 block text-sm font-medium text-slate-700">
+                      <label htmlFor="telefone" className="mb-1.5 block text-sm font-medium text-slate-200">
                         Telefone / WhatsApp *
                       </label>
                       <input id="telefone" name="phone" type="tel" required placeholder="(11) 99999-9999" className={inputClass} />
@@ -142,21 +142,21 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-slate-700">
+                    <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-slate-200">
                       E-mail *
                     </label>
                     <input id="email" name="email" type="email" required placeholder="voce@exemplo.com" className={inputClass} />
                   </div>
 
                   <div>
-                    <label htmlFor="assunto" className="mb-1.5 block text-sm font-medium text-slate-700">
+                    <label htmlFor="assunto" className="mb-1.5 block text-sm font-medium text-slate-200">
                       Assunto *
                     </label>
                     <input id="assunto" name="subject" type="text" required placeholder="Ex.: Orçamento de moto frete" className={inputClass} />
                   </div>
 
                   <div>
-                    <label htmlFor="mensagem" className="mb-1.5 block text-sm font-medium text-slate-700">
+                    <label htmlFor="mensagem" className="mb-1.5 block text-sm font-medium text-slate-200">
                       Mensagem *
                     </label>
                     <textarea id="mensagem" name="message" required rows={4} placeholder="Descreva os detalhes da entrega ou serviço desejado..." className={`${inputClass} resize-y`} />
@@ -165,7 +165,7 @@ export function Contact() {
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-blue px-6 py-3.5 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-brand-navy disabled:cursor-not-allowed disabled:opacity-60"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-blue px-6 py-3.5 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-brand-sky disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {status === "sending" ? (
                       <>
@@ -178,13 +178,13 @@ export function Contact() {
                   </button>
 
                   {status === "error" && (
-                    <p className="rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-700" role="alert">
+                    <p className="rounded-lg bg-red-950/80 border border-red-800 px-4 py-3 text-sm font-medium text-red-300" role="alert">
                       Ocorreu um erro ao enviar. Por favor, tente novamente ou entre em contato pelo WhatsApp.
                     </p>
                   )}
                   {status === "no-key" && (
-                    <p className="rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-800" role="alert">
-                      ⚠️ <strong>Chave do Web3Forms não configurada:</strong> Adicione a variável <code className="rounded bg-amber-100 px-1 py-0.5 font-mono text-xs">VITE_WEB3FORMS_KEY</code> nas configurações da Vercel para receber as mensagens no seu e-mail.
+                    <p className="rounded-lg bg-amber-950/80 border border-amber-800 px-4 py-3 text-sm text-amber-300" role="alert">
+                      ⚠️ <strong>Chave do Web3Forms não configurada:</strong> Adicione a variável <code className="rounded bg-amber-900/60 px-1 py-0.5 font-mono text-xs text-amber-200">VITE_WEB3FORMS_KEY</code> nas configurações da Vercel para receber as mensagens no seu e-mail.
                     </p>
                   )}
                 </form>
@@ -194,10 +194,10 @@ export function Contact() {
 
           <Reveal className="lg:col-span-2" delay={0.15}>
             <div className="flex h-full flex-col gap-6">
-              <ul className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <ul className="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/90 p-6 shadow-xl">
                 {contactItems.map((item) => (
                   <li key={item.label} className="flex items-start gap-4">
-                    <span className="rounded-lg bg-brand-blue/10 p-2.5 text-brand-blue">
+                    <span className="rounded-lg bg-brand-blue/20 p-2.5 text-brand-sky">
                       <item.icon size={20} aria-hidden="true" />
                     </span>
                     <div>
@@ -208,23 +208,23 @@ export function Contact() {
                         <a
                           href={item.href}
                           {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                          className="text-sm font-semibold text-slate-900 transition-colors hover:text-brand-blue"
+                          className="text-sm font-semibold text-white transition-colors hover:text-brand-sky"
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-sm font-semibold text-slate-900">{item.value}</p>
+                        <p className="text-sm font-semibold text-white">{item.value}</p>
                       )}
                     </div>
                   </li>
                 ))}
               </ul>
 
-              <div className="flex-1 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+              <div className="flex-1 overflow-hidden rounded-2xl border border-slate-800 shadow-xl">
                 <iframe
                   title="Mapa de localização da Coopstar Express"
                   src={company.mapEmbed}
-                  className="h-full min-h-[300px] w-full"
+                  className="h-full min-h-[300px] w-full grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen

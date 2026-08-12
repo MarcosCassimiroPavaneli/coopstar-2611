@@ -22,8 +22,8 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled || open
-          ? "border-b border-slate-200/70 bg-white/80 shadow-sm backdrop-blur-md"
-          : "bg-transparent"
+          ? "border-b border-slate-800/80 bg-slate-950/90 shadow-lg backdrop-blur-md"
+          : "bg-slate-950/40 backdrop-blur-sm"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-container items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -50,8 +50,8 @@ export function Navbar() {
                   href={link.href}
                   className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
                     active === link.href.slice(1)
-                      ? "text-brand-blue"
-                      : "text-slate-600 hover:text-brand-navy"
+                      ? "text-brand-sky font-semibold"
+                      : "text-slate-300 hover:text-white hover:bg-slate-800/50"
                   }`}
                 >
                   {link.label}
@@ -63,7 +63,7 @@ export function Navbar() {
 
         <a
           href={company.phoneLink}
-          className="hidden items-center gap-2 rounded-lg bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-brand-navy lg:inline-flex"
+          className="hidden items-center gap-2 rounded-lg bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-brand-sky lg:inline-flex"
         >
           <Phone size={16} aria-hidden="true" />
           {company.phones[0]}
@@ -75,7 +75,7 @@ export function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Fechar menu" : "Abrir menu"}
-          className="rounded-md p-2 text-slate-700 hover:bg-slate-100 lg:hidden"
+          className="rounded-md p-2 text-slate-200 hover:bg-slate-800 lg:hidden"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -96,7 +96,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="overflow-hidden border-t border-slate-100 bg-white/95 backdrop-blur-md lg:hidden"
+            className="overflow-hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-md lg:hidden"
           >
             <ul className="space-y-1 px-4 py-4">
               {navLinks.map((link) => (
@@ -106,8 +106,8 @@ export function Navbar() {
                     onClick={() => setOpen(false)}
                     className={`block rounded-md px-3 py-2.5 text-base font-medium ${
                       active === link.href.slice(1)
-                        ? "bg-brand-blue/10 text-brand-blue"
-                        : "text-slate-700 hover:bg-slate-100"
+                        ? "bg-brand-blue/20 text-brand-sky font-semibold"
+                        : "text-slate-300 hover:bg-slate-800/80 hover:text-white"
                     }`}
                   >
                     {link.label}
