@@ -95,78 +95,91 @@ export function Contact() {
         <div className="grid gap-10 lg:grid-cols-5">
           <Reveal className="lg:col-span-3">
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-              <form onSubmit={handleSubmit} noValidate={false} className="space-y-5">
-                {/* Anti-spam honeypot */}
-                <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
-
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="nome" className="mb-1.5 block text-sm font-medium text-slate-700">
-                      Nome completo *
-                    </label>
-                    <input id="nome" name="name" type="text" required placeholder="Seu nome" className={inputClass} />
+              {status === "success" ? (
+                <div className="flex flex-col items-center justify-center py-12 text-center">
+                  <div className="mb-4 rounded-full bg-emerald-100 p-4 text-emerald-600">
+                    <CheckCircle2 size={48} aria-hidden="true" />
                   </div>
-                  <div>
-                    <label htmlFor="telefone" className="mb-1.5 block text-sm font-medium text-slate-700">
-                      Telefone / WhatsApp *
-                    </label>
-                    <input id="telefone" name="phone" type="tel" required placeholder="(11) 99999-9999" className={inputClass} />
+                  <h3 className="mb-2 text-2xl font-bold text-slate-900">Mensagem enviada com sucesso!</h3>
+                  <p className="mb-6 max-w-md text-sm text-slate-600">
+                    Agradecemos seu contato. Recebemos sua mensagem e nossa equipe retornará em breve.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setStatus("idle")}
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-blue px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-navy"
+                  >
+                    Enviar outra mensagem
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} noValidate={false} className="space-y-5">
+                  {/* Anti-spam honeypot */}
+                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <div>
+                      <label htmlFor="nome" className="mb-1.5 block text-sm font-medium text-slate-700">
+                        Nome completo *
+                      </label>
+                      <input id="nome" name="name" type="text" required placeholder="Seu nome" className={inputClass} />
+                    </div>
+                    <div>
+                      <label htmlFor="telefone" className="mb-1.5 block text-sm font-medium text-slate-700">
+                        Telefone / WhatsApp *
+                      </label>
+                      <input id="telefone" name="phone" type="tel" required placeholder="(11) 99999-9999" className={inputClass} />
+                    </div>
                   </div>
-                </div>
 
-                <div>
-                  <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-slate-700">
-                    E-mail *
-                  </label>
-                  <input id="email" name="email" type="email" required placeholder="voce@exemplo.com" className={inputClass} />
-                </div>
+                  <div>
+                    <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-slate-700">
+                      E-mail *
+                    </label>
+                    <input id="email" name="email" type="email" required placeholder="voce@exemplo.com" className={inputClass} />
+                  </div>
 
-                <div>
-                  <label htmlFor="assunto" className="mb-1.5 block text-sm font-medium text-slate-700">
-                    Assunto *
-                  </label>
-                  <input id="assunto" name="subject" type="text" required placeholder="Ex.: Orçamento de moto frete" className={inputClass} />
-                </div>
+                  <div>
+                    <label htmlFor="assunto" className="mb-1.5 block text-sm font-medium text-slate-700">
+                      Assunto *
+                    </label>
+                    <input id="assunto" name="subject" type="text" required placeholder="Ex.: Orçamento de moto frete" className={inputClass} />
+                  </div>
 
-                <div>
-                  <label htmlFor="mensagem" className="mb-1.5 block text-sm font-medium text-slate-700">
-                    Mensagem *
-                  </label>
-                  <textarea id="mensagem" name="message" required rows={4} placeholder="Descreva os detalhes da entrega ou serviço desejado..." className={`${inputClass} resize-y`} />
-                </div>
+                  <div>
+                    <label htmlFor="mensagem" className="mb-1.5 block text-sm font-medium text-slate-700">
+                      Mensagem *
+                    </label>
+                    <textarea id="mensagem" name="message" required rows={4} placeholder="Descreva os detalhes da entrega ou serviço desejado..." className={`${inputClass} resize-y`} />
+                  </div>
 
-                <button
-                  type="submit"
-                  disabled={status === "sending"}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-blue px-6 py-3.5 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-brand-navy disabled:cursor-not-allowed disabled:opacity-60"
-                >
-                  {status === "sending" ? (
-                    <>
-                      <Loader2 size={18} className="animate-spin" aria-hidden="true" />
-                      Enviando mensagem...
-                    </>
-                  ) : (
-                    "Enviar mensagem"
+                  <button
+                    type="submit"
+                    disabled={status === "sending"}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-blue px-6 py-3.5 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-brand-navy disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {status === "sending" ? (
+                      <>
+                        <Loader2 size={18} className="animate-spin" aria-hidden="true" />
+                        Enviando mensagem...
+                      </>
+                    ) : (
+                      "Enviar mensagem"
+                    )}
+                  </button>
+
+                  {status === "error" && (
+                    <p className="rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-700" role="alert">
+                      Ocorreu um erro ao enviar. Por favor, tente novamente ou entre em contato pelo WhatsApp.
+                    </p>
                   )}
-                </button>
-
-                {status === "success" && (
-                  <p className="flex items-center gap-2 rounded-lg bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700" role="status">
-                    <CheckCircle2 size={18} aria-hidden="true" />
-                    Mensagem enviada com sucesso! Entraremos em contato em breve.
-                  </p>
-                )}
-                {status === "error" && (
-                  <p className="rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-700" role="alert">
-                    Ocorreu um erro ao enviar. Por favor, tente novamente ou entre em contato pelo WhatsApp.
-                  </p>
-                )}
-                {status === "no-key" && (
-                  <p className="rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-800" role="alert">
-                    ⚠️ <strong>Chave do Web3Forms não configurada:</strong> Adicione a variável <code className="rounded bg-amber-100 px-1 py-0.5 font-mono text-xs">VITE_WEB3FORMS_KEY</code> nas configurações da Vercel para receber as mensagens no seu e-mail.
-                  </p>
-                )}
-              </form>
+                  {status === "no-key" && (
+                    <p className="rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-800" role="alert">
+                      ⚠️ <strong>Chave do Web3Forms não configurada:</strong> Adicione a variável <code className="rounded bg-amber-100 px-1 py-0.5 font-mono text-xs">VITE_WEB3FORMS_KEY</code> nas configurações da Vercel para receber as mensagens no seu e-mail.
+                    </p>
+                  )}
+                </form>
+              )}
             </div>
           </Reveal>
 
