@@ -10,7 +10,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <Section id="faq" className="bg-slate-900/60 border-y border-slate-800/80 py-20 sm:py-28">
+    <Section id="faq" className="bg-neutral-950 border-y border-neutral-800 py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="FAQ"
@@ -25,7 +25,7 @@ export function FAQ() {
               <Reveal key={faq.question} delay={i * 0.05}>
                 <div
                   className={`overflow-hidden rounded-xl border transition-colors ${
-                    open ? "border-brand-sky/50 bg-slate-900/90 shadow-lg" : "border-slate-800 bg-slate-950/60 hover:border-slate-700"
+                    open ? "border-neutral-700 bg-neutral-900 shadow-2xl" : "border-neutral-800 bg-black/60 hover:border-neutral-700"
                   }`}
                 >
                   <button
@@ -40,7 +40,7 @@ export function FAQ() {
                     <ChevronDown
                       size={20}
                       aria-hidden="true"
-                      className={`shrink-0 text-brand-sky transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+                      className={`shrink-0 text-brand-red transition-transform duration-300 ${open ? "rotate-180" : ""}`}
                     />
                   </button>
                   <AnimatePresence initial={false}>
@@ -54,7 +54,7 @@ export function FAQ() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25, ease: "easeOut" }}
                       >
-                        <p className="px-5 pb-5 text-sm leading-relaxed text-slate-300">
+                        <p className="px-5 pb-5 text-sm leading-relaxed text-zinc-300">
                           {faq.answer}
                         </p>
                       </motion.div>

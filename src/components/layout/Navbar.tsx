@@ -22,8 +22,8 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled || open
-          ? "border-b border-slate-800/80 bg-slate-950/90 shadow-lg backdrop-blur-md"
-          : "bg-slate-950/40 backdrop-blur-sm"
+          ? "border-b border-neutral-800 bg-black/90 shadow-2xl backdrop-blur-md"
+          : "bg-black/60 backdrop-blur-sm"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-container items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -48,10 +48,10 @@ export function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                  className={`rounded-md px-3.5 py-2 text-sm font-medium transition-colors ${
                     active === link.href.slice(1)
-                      ? "text-brand-sky font-semibold"
-                      : "text-slate-300 hover:text-white hover:bg-slate-800/50"
+                      ? "bg-neutral-800 text-white font-bold border border-neutral-700"
+                      : "text-zinc-300 hover:text-white hover:bg-neutral-900"
                   }`}
                 >
                   {link.label}
@@ -63,7 +63,7 @@ export function Navbar() {
 
         <a
           href={company.phoneLink}
-          className="hidden items-center gap-2 rounded-lg bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-brand-sky lg:inline-flex"
+          className="hidden items-center gap-2 rounded-lg bg-brand-red px-4 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-brand-darkred lg:inline-flex"
         >
           <Phone size={16} aria-hidden="true" />
           {company.phones[0]}
@@ -75,14 +75,14 @@ export function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Fechar menu" : "Abrir menu"}
-          className="rounded-md p-2 text-slate-200 hover:bg-slate-800 lg:hidden"
+          className="rounded-md p-2 text-zinc-200 hover:bg-neutral-900 lg:hidden"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       <motion.div
-        className="h-0.5 origin-left bg-gradient-to-r from-brand-blue to-brand-sky"
+        className="h-0.5 origin-left bg-gradient-to-r from-brand-red to-zinc-400"
         style={{ scaleX: progress }}
         aria-hidden="true"
       />
@@ -96,7 +96,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="overflow-hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-md lg:hidden"
+            className="overflow-hidden border-t border-neutral-800 bg-black/95 backdrop-blur-md lg:hidden"
           >
             <ul className="space-y-1 px-4 py-4">
               {navLinks.map((link) => (
@@ -106,8 +106,8 @@ export function Navbar() {
                     onClick={() => setOpen(false)}
                     className={`block rounded-md px-3 py-2.5 text-base font-medium ${
                       active === link.href.slice(1)
-                        ? "bg-brand-blue/20 text-brand-sky font-semibold"
-                        : "text-slate-300 hover:bg-slate-800/80 hover:text-white"
+                        ? "bg-neutral-800 text-white font-bold"
+                        : "text-zinc-300 hover:bg-neutral-900 hover:text-white"
                     }`}
                   >
                     {link.label}
@@ -117,7 +117,7 @@ export function Navbar() {
               <li className="pt-2">
                 <a
                   href={company.phoneLink}
-                  className="flex items-center justify-center gap-2 rounded-lg bg-brand-blue px-4 py-3 text-sm font-semibold text-white"
+                  className="flex items-center justify-center gap-2 rounded-lg bg-brand-red px-4 py-3 text-sm font-semibold text-white"
                 >
                   <Phone size={16} aria-hidden="true" />
                   {company.phones[0]}

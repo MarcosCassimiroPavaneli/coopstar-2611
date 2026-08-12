@@ -28,7 +28,7 @@ function PackagePickup({ size, ariaHidden }: { size: number; ariaHidden?: boolea
 
 export function Process() {
   return (
-    <Section id="processo" className="bg-slate-950 py-20 sm:py-28">
+    <Section id="processo" className="bg-black py-20 sm:py-28">
       <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Processo de Trabalho"
@@ -41,15 +41,15 @@ export function Process() {
             const Icon = icons[i % icons.length];
             return (
               <Reveal key={step.step} delay={i * 0.12}>
-                <li className="group relative h-full rounded-2xl border border-slate-800 bg-slate-900/90 p-6 shadow-lg transition-all hover:-translate-y-1.5 hover:border-brand-sky/50 hover:shadow-2xl hover:shadow-brand-blue/10">
-                  <div className="mb-4 inline-flex rounded-xl bg-brand-blue/20 p-3 text-brand-sky transition-colors group-hover:bg-brand-blue group-hover:text-white">
+                <li className="group relative h-full rounded-2xl border border-neutral-800 bg-neutral-900/90 p-6 shadow-2xl transition-all hover:-translate-y-1.5 hover:border-neutral-600">
+                  <div className="mb-4 inline-flex rounded-xl bg-neutral-800 p-3 text-brand-red transition-colors group-hover:bg-brand-red group-hover:text-white">
                     <Icon size={24} aria-hidden="true" />
                   </div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-brand-sky">
+                  <p className="text-xs font-bold uppercase tracking-widest text-zinc-400">
                     Passo {step.step}
                   </p>
                   <h3 className="mt-1 text-lg font-bold text-white">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-400">
                     {step.description}
                   </p>
                 </li>
@@ -61,7 +61,7 @@ export function Process() {
         <Reveal className="mt-12 text-center">
           <a
             href="#contato"
-            className="inline-flex items-center gap-2 rounded-lg bg-brand-blue px-8 py-3.5 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-brand-sky"
+            className="inline-flex items-center gap-2 rounded-lg bg-brand-red px-8 py-3.5 text-sm font-semibold text-white shadow-xl shadow-brand-red/20 transition-all hover:-translate-y-0.5 hover:bg-brand-darkred"
           >
             <Handshake size={18} aria-hidden="true" />
             Comece agora — agende uma coleta

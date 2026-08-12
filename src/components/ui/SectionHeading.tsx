@@ -16,14 +16,14 @@ export function SectionHeading({
   const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
   return (
     <Reveal className={`max-w-2xl ${alignClass} mb-12`}>
-      <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-sky">
+      <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-red">
         {eyebrow}
       </p>
       <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl text-balance">
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 text-base leading-relaxed text-slate-400 sm:text-lg">
+        <p className="mt-4 text-base leading-relaxed text-zinc-400 sm:text-lg">
           {description}
         </p>
       ) : null}

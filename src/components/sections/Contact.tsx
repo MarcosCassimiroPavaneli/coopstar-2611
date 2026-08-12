@@ -11,7 +11,7 @@ const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT as string | u
 type Status = "idle" | "sending" | "success" | "error" | "no-key";
 
 const inputClass =
-  "w-full rounded-lg border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 transition-colors focus:border-brand-sky focus:outline-none focus:ring-2 focus:ring-brand-sky/30";
+  "w-full rounded-lg border border-neutral-800 bg-black/90 px-4 py-3 text-sm text-white placeholder:text-zinc-500 transition-colors focus:border-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-600/30";
 
 export function Contact() {
   const [status, setStatus] = useState<Status>("idle");
@@ -93,7 +93,7 @@ export function Contact() {
   ];
 
   return (
-    <Section id="contato" className="bg-slate-950 py-20 sm:py-28">
+    <Section id="contato" className="bg-black py-20 sm:py-28">
       <div className="mx-auto max-w-container px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Contato / Localização"
@@ -103,20 +103,20 @@ export function Contact() {
 
         <div className="grid gap-10 lg:grid-cols-5">
           <Reveal className="lg:col-span-3">
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/90 p-6 shadow-xl sm:p-8">
+            <div className="rounded-2xl border border-neutral-800 bg-neutral-900/90 p-6 shadow-2xl sm:p-8">
               {status === "success" ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
                   <div className="mb-4 rounded-full bg-emerald-950/80 border border-emerald-800 p-4 text-emerald-400">
                     <CheckCircle2 size={48} aria-hidden="true" />
                   </div>
                   <h3 className="mb-2 text-2xl font-bold text-white">Mensagem enviada com sucesso!</h3>
-                  <p className="mb-6 max-w-md text-sm text-slate-300">
+                  <p className="mb-6 max-w-md text-sm text-zinc-300">
                     Agradecemos seu contato. Recebemos sua mensagem e nossa equipe retornará em breve.
                   </p>
                   <button
                     type="button"
                     onClick={() => setStatus("idle")}
-                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-blue px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-sky"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-red px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-darkred"
                   >
                     Enviar outra mensagem
                   </button>
@@ -128,13 +128,13 @@ export function Contact() {
 
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
-                      <label htmlFor="nome" className="mb-1.5 block text-sm font-medium text-slate-200">
+                      <label htmlFor="nome" className="mb-1.5 block text-sm font-medium text-zinc-200">
                         Nome completo *
                       </label>
                       <input id="nome" name="name" type="text" required placeholder="Seu nome" className={inputClass} />
                     </div>
                     <div>
-                      <label htmlFor="telefone" className="mb-1.5 block text-sm font-medium text-slate-200">
+                      <label htmlFor="telefone" className="mb-1.5 block text-sm font-medium text-zinc-200">
                         Telefone / WhatsApp *
                       </label>
                       <input id="telefone" name="phone" type="tel" required placeholder="(11) 99999-9999" className={inputClass} />
@@ -142,21 +142,21 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-slate-200">
+                    <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-zinc-200">
                       E-mail *
                     </label>
                     <input id="email" name="email" type="email" required placeholder="voce@exemplo.com" className={inputClass} />
                   </div>
 
                   <div>
-                    <label htmlFor="assunto" className="mb-1.5 block text-sm font-medium text-slate-200">
+                    <label htmlFor="assunto" className="mb-1.5 block text-sm font-medium text-zinc-200">
                       Assunto *
                     </label>
                     <input id="assunto" name="subject" type="text" required placeholder="Ex.: Orçamento de moto frete" className={inputClass} />
                   </div>
 
                   <div>
-                    <label htmlFor="mensagem" className="mb-1.5 block text-sm font-medium text-slate-200">
+                    <label htmlFor="mensagem" className="mb-1.5 block text-sm font-medium text-zinc-200">
                       Mensagem *
                     </label>
                     <textarea id="mensagem" name="message" required rows={4} placeholder="Descreva os detalhes da entrega ou serviço desejado..." className={`${inputClass} resize-y`} />
@@ -165,7 +165,7 @@ export function Contact() {
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-blue px-6 py-3.5 text-sm font-semibold text-white shadow-card transition-all hover:-translate-y-0.5 hover:bg-brand-sky disabled:cursor-not-allowed disabled:opacity-60"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-red px-6 py-3.5 text-sm font-semibold text-white shadow-xl shadow-brand-red/20 transition-all hover:-translate-y-0.5 hover:bg-brand-darkred disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {status === "sending" ? (
                       <>
@@ -194,21 +194,21 @@ export function Contact() {
 
           <Reveal className="lg:col-span-2" delay={0.15}>
             <div className="flex h-full flex-col gap-6">
-              <ul className="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/90 p-6 shadow-xl">
+              <ul className="space-y-4 rounded-2xl border border-neutral-800 bg-neutral-900/90 p-6 shadow-2xl">
                 {contactItems.map((item) => (
                   <li key={item.label} className="flex items-start gap-4">
-                    <span className="rounded-lg bg-brand-blue/20 p-2.5 text-brand-sky">
+                    <span className="rounded-lg bg-neutral-800 p-2.5 text-brand-red">
                       <item.icon size={20} aria-hidden="true" />
                     </span>
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                      <p className="text-xs font-bold uppercase tracking-widest text-zinc-400">
                         {item.label}
                       </p>
                       {item.href ? (
                         <a
                           href={item.href}
                           {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                          className="text-sm font-semibold text-white transition-colors hover:text-brand-sky"
+                          className="text-sm font-semibold text-white transition-colors hover:text-brand-red"
                         >
                           {item.value}
                         </a>
@@ -220,7 +220,7 @@ export function Contact() {
                 ))}
               </ul>
 
-              <div className="flex-1 overflow-hidden rounded-2xl border border-slate-800 shadow-xl">
+              <div className="flex-1 overflow-hidden rounded-2xl border border-neutral-800 shadow-2xl">
                 <iframe
                   title="Mapa de localização da Coopstar Express"
                   src={company.mapEmbed}

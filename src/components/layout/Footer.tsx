@@ -3,18 +3,18 @@ import { company, navLinks } from "../../data/content";
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950 text-slate-400">
+    <footer className="border-t border-neutral-800 bg-black text-zinc-400">
       <div className="mx-auto grid max-w-container gap-10 px-4 py-14 sm:px-6 lg:grid-cols-3 lg:px-8">
         <div>
           <img
             src="/images/logo.png"
             alt={`Logo ${company.name}`}
-            className="h-14 w-auto invert"
+            className="h-14 w-auto invert opacity-90"
             width={280}
             height={56}
             loading="lazy"
           />
-          <p className="mt-4 max-w-sm text-sm leading-relaxed">
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-400">
             Especialistas em serviços de moto frete, entregas e coletas em São
             Paulo Capital e Grande São Paulo, 24 horas por dia.
           </p>
@@ -29,7 +29,7 @@ export function Footer() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-sm transition-colors hover:text-brand-sky"
+                  className="text-sm transition-colors hover:text-white"
                 >
                   {link.label}
                 </a>
@@ -44,7 +44,7 @@ export function Footer() {
           </h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-3">
-              <MapPin size={16} className="mt-0.5 shrink-0 text-brand-sky" aria-hidden="true" />
+              <MapPin size={16} className="mt-0.5 shrink-0 text-brand-red" aria-hidden="true" />
               <span>
                 {company.address.street}
                 <br />
@@ -52,27 +52,27 @@ export function Footer() {
               </span>
             </li>
             <li className="flex items-center gap-3">
-              <Phone size={16} className="shrink-0 text-brand-sky" aria-hidden="true" />
-              <a href={company.phoneLink} className="transition-colors hover:text-brand-sky">
+              <Phone size={16} className="shrink-0 text-brand-red" aria-hidden="true" />
+              <a href={company.phoneLink} className="transition-colors hover:text-white">
                 {company.phones[0]} / {company.phones[1]}
               </a>
             </li>
             <li className="flex items-center gap-3">
-              <Mail size={16} className="shrink-0 text-brand-sky" aria-hidden="true" />
-              <a href={company.emailLink} className="transition-colors hover:text-brand-sky">
+              <Mail size={16} className="shrink-0 text-brand-red" aria-hidden="true" />
+              <a href={company.emailLink} className="transition-colors hover:text-white">
                 {company.email}
               </a>
             </li>
             <li className="flex items-center gap-3">
-              <Clock size={16} className="shrink-0 text-brand-sky" aria-hidden="true" />
+              <Clock size={16} className="shrink-0 text-brand-red" aria-hidden="true" />
               <span>{company.hours}</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-slate-800">
-        <div className="mx-auto flex max-w-container flex-col items-center justify-between gap-3 px-4 py-6 text-center text-xs text-slate-400 sm:flex-row sm:px-6 lg:px-8">
+      <div className="border-t border-neutral-800">
+        <div className="mx-auto flex max-w-container flex-col items-center justify-between gap-3 px-4 py-6 text-center text-xs text-zinc-500 sm:flex-row sm:px-6 lg:px-8">
           <p>© {new Date().getFullYear()} {company.name}. Todos os direitos reservados.</p>
           <p>
             Desenvolvimento{" "}
@@ -80,7 +80,7 @@ export function Footer() {
               href="https://www.estudiocriarte.com.br/promohotsite"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-2 transition-colors hover:text-brand-sky"
+              className="underline underline-offset-2 transition-colors hover:text-white"
             >
               Estúdio Criarte
             </a>

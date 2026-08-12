@@ -30,7 +30,7 @@ export function Hero() {
 
   return (
     <div
-      className="relative h-[85vh] min-h-[540px] w-full overflow-hidden bg-slate-900"
+      className="relative h-[85vh] min-h-[540px] w-full overflow-hidden bg-black"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -50,7 +50,7 @@ export function Hero() {
             className="h-full w-full object-cover"
             loading={index === 0 ? "eager" : "lazy"}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-slate-950/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/40" />
         </motion.div>
       </AnimatePresence>
 
@@ -64,25 +64,25 @@ export function Hero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-2xl"
           >
-            <p className="mb-4 inline-block rounded-full border border-brand-sky/30 bg-brand-sky/15 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-sky backdrop-blur-md">
+            <p className="mb-4 inline-block rounded-full border border-neutral-700 bg-neutral-900/90 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-zinc-300 backdrop-blur-md">
               {slide.eyebrow}
             </p>
             <h1 className="text-4xl font-extrabold leading-tight text-white text-balance sm:text-5xl lg:text-6xl">
               {slide.title}
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-zinc-300">
               {slide.subtitle}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="#contato"
-                className="inline-flex items-center gap-2 rounded-lg bg-brand-blue px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-blue/25 transition-all hover:-translate-y-0.5 hover:bg-brand-sky focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                className="inline-flex items-center gap-2 rounded-lg bg-brand-red px-7 py-3.5 text-sm font-semibold text-white shadow-xl shadow-brand-red/20 transition-all hover:-translate-y-0.5 hover:bg-brand-darkred focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
               >
                 {slide.cta}
               </a>
               <a
                 href="#servicos"
-                className="inline-flex items-center gap-2 rounded-lg border-2 border-white/40 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/20"
+                className="inline-flex items-center gap-2 rounded-lg border border-neutral-700 bg-neutral-900/80 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-neutral-500 hover:bg-neutral-800"
               >
                 Nossos serviços
               </a>
