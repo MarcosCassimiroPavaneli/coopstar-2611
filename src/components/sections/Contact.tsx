@@ -5,8 +5,7 @@ import { Section } from "../ui/Section";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Reveal } from "../ui/Section";
 
-const DEFAULT_WEB3FORMS_KEY = "860ca439-0072-48c1-a81e-f7a57b807050";
-const WEB3FORMS_KEY = (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) || DEFAULT_WEB3FORMS_KEY;
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY as string | undefined;
 const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT as string | undefined;
 
 type Status = "idle" | "sending" | "success" | "error" | "no-key";
