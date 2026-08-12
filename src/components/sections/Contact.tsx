@@ -42,13 +42,23 @@ export function Contact() {
           headers: { Accept: "application/json" },
         });
       } else {
-        // Web3Forms (via Access Key)
-        data.append("access_key", apiKey);
-        data.append("from_name", "Coopstar Express Site");
+        // Web3Forms (via Access Key com JSON)
+        const payload = {
+          access_key: apiKey,
+          from_name: "Coopstar Express Site",
+          subject: data.get("subject") || "Novo contato do site",
+          name: data.get("name"),
+          email: data.get("email"),
+          phone: data.get("phone"),
+          message: data.get("message"),
+        };
         response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
-          body: data,
-          headers: { Accept: "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(payload),
         });
       }
 
